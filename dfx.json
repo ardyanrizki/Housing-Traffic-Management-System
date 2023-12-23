@@ -1,12 +1,12 @@
 {
     "canisters": {
-        "road_allocation_for_housing_estate_contract": {
+        "housing_traffic_management_system": {
             "type": "custom",
             "root": "src",
             "ts": "src/index.ts",
             "candid": "src/index.did",
-            "build": "npx azle road_allocation_for_housing_estate_contract",
-            "wasm": ".azle/road_allocation_for_housing_estate_contract/road_allocation_for_housing_estate_contract.wasm.gz"
+            "build": "npx azle housing_traffic_management_system",
+            "wasm": ".azle/housing_traffic_management_system/housing_traffic_management_system.wasm.gz"
         }
     }
 }
