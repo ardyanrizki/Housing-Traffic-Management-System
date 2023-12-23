@@ -1,0 +1,16 @@
+type HousingPayload = record {
+  number_of_residents : float64;
+  housing_name : text;
+  traffic_id : text;
+};
+type HousingResponse = record {
+  msg : text;
+  remainingLimit : float64;
+  isSuccess : bool;
+};
+type TrafficPayload = record { limit : float64; road_name : text };
+service : () -> {
+  createHousing : (HousingPayload) -> (HousingResponse);
+  createTraffic : (TrafficPayload) -> (text);
+  editTrafficLimit : (text, TrafficPayload) -> ();
+}
