@@ -8,9 +8,19 @@ type HousingResponse = record {
   remainingLimit : float64;
   isSuccess : bool;
 };
+type Traffic = record {
+  id : text;
+  updated_at : opt nat64;
+  traffic_limit : float64;
+  road_name : text;
+  created_date : nat64;
+};
 type TrafficPayload = record { limit : float64; road_name : text };
+type _AzleResult = variant { Ok : HousingResponse; Err : text };
+type _AzleResult_1 = variant { Ok : text; Err : text };
+type _AzleResult_2 = variant { Ok : Traffic; Err : text };
 service : () -> {
-  createHousing : (HousingPayload) -> (HousingResponse);
-  createTraffic : (TrafficPayload) -> (text);
-  editTrafficLimit : (text, TrafficPayload) -> ();
+  createHousing : (HousingPayload) -> (_AzleResult);
+  createTraffic : (TrafficPayload) -> (_AzleResult_1);
+  editTrafficLimit : (text, TrafficPayload) -> (_AzleResult_2);
 }
